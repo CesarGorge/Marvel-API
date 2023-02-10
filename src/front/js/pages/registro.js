@@ -8,7 +8,6 @@ export const Registro = (props) => {
   const [password, setPassword] = useState("");
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
-  const [telefono, setTelefono] = useState("");
 
   let navigate = useNavigate();
   async function handleSubmit(event) {
@@ -24,7 +23,6 @@ export const Registro = (props) => {
           password: password,
           nombre: nombre,
           apellido: apellido,
-          telefono: telefono,
         }),
       });
       if (!response.ok) {
