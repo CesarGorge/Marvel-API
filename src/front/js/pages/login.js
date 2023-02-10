@@ -30,11 +30,10 @@ export const Login = (props) => {
       console.log(body);
 
       localStorage.setItem("token", body.token);
-      localStorage.setItem("role", body.role);
       localStorage.setItem("id", body.id);
 
       actions.setAutUsuario(body);
-      navigate(`/${body.role}/profile/${body.id}`);
+      navigate("/home");
     } catch (error) {
       console.log(error);
     }
