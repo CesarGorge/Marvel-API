@@ -1,3 +1,36 @@
-/* 
-    General Styles used on every website (Don't Repeat Yourself)
-*/
+.hero,
+.trending {
+  margin-left: 260px;
+}
+
+.parrafo1 {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 104px;
+}
+
+.parrafo2 {
+  font-weight: 400;
+  font-size: 36px;
+
+  color: rgba(18, 18, 18, 0.6);
+}
+
+.trending {
+  margin-top: 90px;
+}
+
+.parrafo3 {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 68px;
+}
+
+.personajesCard {
+  margin: 25px;
+  width: 305px;
+  height: 420px;
+  border-radius: 10px;
+  padding: 0px;
+  filter: drop-shadow(0px 4px 10px rgba(51, 51, 51, 0.2));
+}
