@@ -41,9 +41,9 @@ The `Provider` is already set. You can consume from any component using the useC
 ```jsx
 import { Context } from "../store/appContext";
 const MyComponentSuper = () => {
-    //here you use useContext to get store and actions
-    const { store, actions } = useContext(Context);
-    return <div>{/* you can use your actions or store inside the html */}</div>;
+  //here you use useContext to get store and actions
+  const { store, actions } = useContext(Context);
+  return <div>{/* you can use your actions or store inside the html */}</div>;
 };
 ```
 
@@ -89,7 +89,7 @@ To update with all yours tables you can edit the file app.py and go to the line 
 
 ### Front-End Manual Installation:
 
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
+- Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
 
 1. Install the packages: `$ npm install`
 2. Start coding! start the webpack dev server `$ npm run start`
@@ -97,3 +97,23 @@ To update with all yours tables you can edit the file app.py and go to the line 
 ## Publish your website!
 
 This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
+
+En caso de que no aparezcan las variables en el .env
+
+# This file includes global variables that will be available inside your project
+
+# 1. In the front end code you can access this variables like this: console.log(process.env.VARIABLE_NAME)
+
+# 1. In the back end code you access the variable by importing os and then typing print(os.getenv('VARIABLE_NAME'))
+
+# Back-End Variables
+
+DATABASE_URL=postgres://gitpod@localhost:5432/example
+FLASK_APP_KEY="any key works"
+FLASK_APP=src/app.py
+FLASK_ENV=development
+
+# Front-End Variables
+
+BASENAME=/
+BACKEND_URL=https://3001-cesargorge-marvelapi-9oso8gl0eq8.ws-us86.gitpod.io

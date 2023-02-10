@@ -1,5 +1,6 @@
 import React from "react";
+import { DetallePersonajes } from "../component/detallePersonaje";
 
 export const Personaje = () => {
-  return <div className="container">Hola</div>;
+  return <DetallePersonajes />;
 };
