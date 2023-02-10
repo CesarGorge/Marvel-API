@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -16,29 +16,6 @@ export const Navbar = () => {
               }}
             />
           </Link>
-          <form className="d-flex mx-5 my-1" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Buscar personaje..."
-              aria-label="Search"
-              style={{
-                border: "1px solid lightgray",
-                borderRadius: "29px",
-                width: "435px",
-                height: "46px",
-              }}
-            />
-            <button className="btn" type="submit">
-              <i
-                className="fa-solid fa-magnifying-glass"
-                style={{
-                  fontSize: "25px",
-                  color: "gray",
-                }}
-              ></i>
-            </button>
-          </form>
         </div>
         <div className="d-flex my-2">
           <Link

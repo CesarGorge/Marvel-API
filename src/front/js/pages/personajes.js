@@ -3,6 +3,26 @@ import { PersonajeCard } from "../component/personajeCard";
 
 export const Personajes = () => {
   const [info, setInfo] = useState([]);
+  const [search, setSearch] = useState("");
+  const [busqueda, Setbusqueda] = useState([]);
+  const searcher = (e) => {
+    setSearch(e.target.value);
+    console.log(e.target.value);
+    filtrar(e.target.value);
+  };
+
+  const filtrar = (terminoBusqueda) => {
+    var resultadosBusqueda = info.filter((elemento) => {
+      if (
+        typeof elemento.name === "string" &&
+        elemento.name.toLowerCase().includes(terminoBusqueda.toLowerCase())
+      ) {
+        return elemento;
+      }
+    });
+
+    Setbusqueda(resultadosBusqueda);
+  };
 
   console.log("cargando personajes...");
 
@@ -27,9 +47,35 @@ export const Personajes = () => {
 
   return (
     <div className="container personajes">
-      <h1>Personajes</h1>
+      <div className="container d-flex">
+        <h1>Personajes</h1>
+        <form className="d-flex mx-5 my-1" role="search">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Buscar personaje..."
+            aria-label="Search"
+            value={search}
+            onChange={searcher}
+            style={{
+              border: "1px solid lightgray",
+              borderRadius: "29px",
+              width: "435px",
+              height: "46px",
+            }}
+          />
+          <i
+            className="fa-solid fa-magnifying-glass pt-2 "
+            style={{
+              fontSize: "25px",
+              color: "gray",
+              paddingLeft: "6px",
+            }}
+          ></i>
+        </form>
+      </div>
       <div className="container mt-5">
-        <PersonajeCard info={info} />
+        <PersonajeCard info={busqueda.length ? busqueda : info} />
       </div>
     </div>
   );
