@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export const DetallePersonajes = () => {
+export const DetallePersonaje = () => {
   const [infopers, setInfopers] = useState([]);
   const params = useParams();
   console.log("cargando personaje...");

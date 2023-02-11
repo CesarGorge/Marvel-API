@@ -1,6 +1,6 @@
 import React from "react";
-import { DetallePersonajes } from "../component/detallePersonaje";
+import { DetallePersonaje } from "../component/detallePersonaje";
 
 export const Personaje = () => {
-  return <DetallePersonajes />;
+  return <DetallePersonaje />;
 };
