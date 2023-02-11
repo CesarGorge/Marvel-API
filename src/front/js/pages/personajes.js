@@ -28,7 +28,7 @@ export const Personajes = () => {
 
   useEffect(() => {
     fetch(
-      "https://gateway.marvel.com:443/v1/public/characters?limit=20&ts=1&apikey=7e2e38a077932ff852196c1a01cea5a5&hash=65556a4131afe8e71e3b6710c53da9fe"
+      "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=7e2e38a077932ff852196c1a01cea5a5&hash=65556a4131afe8e71e3b6710c53da9fe"
     )
       .then(function (response) {
         if (!response.ok) {

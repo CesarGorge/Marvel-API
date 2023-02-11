@@ -14,7 +14,7 @@ export const FormLogin = (props) => {
       const response = await fetch(process.env.BACKEND_URL + "/api/login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "Application/json",
         },
         body: JSON.stringify({
           email: email,

@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ user: user });
       },
 
-      setInfoUsuario: (infoUser) => {
+      setInfoUser: (infoUser) => {
         const store = getStore();
         setStore({
           user: {
@@ -34,7 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       removeToken: () => {
         localStorage.removeItem("token");
-        setStore({ usuario: {} });
+        setStore({ user: {} });
       },
 
       exampleFunction: () => {

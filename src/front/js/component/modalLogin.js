@@ -50,20 +50,21 @@ export const ModalLogin = () => {
                 Iniciar Sesión
               </Link>
             </button>
-            <div className="col-10">
-              <p className="text-center mt-3 fs-6" data-bs-dismiss="modal">
-                ¿No tienes cuenta aún?
-                <Link
-                  to="/registro"
-                  style={{
-                    color: "red",
-                    marginLeft: "5px",
-                    textDecoration: "none",
-                  }}
-                >
-                  Regístrate
-                </Link>
-              </p>
+            <div
+              className="col-10 text-center mt-3 fs-6"
+              data-bs-dismiss="modal"
+            >
+              ¿No tienes cuenta aún?
+              <Link
+                to="/registro"
+                style={{
+                  color: "red",
+                  marginLeft: "5px",
+                  textDecoration: "none",
+                }}
+              >
+                Regístrate
+              </Link>
             </div>
           </div>
         </div>
