@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { ModalLogin } from "./modalLogin";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary p-5 mx-5">
       <div className="container-fluid">
@@ -18,17 +21,34 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="d-flex my-2">
-          <Link
-            to="/personajes"
-            className="nav-link active"
-            aria-current="page"
-            style={{
-              color: "gray",
-              fontSize: "20px",
-            }}
-          >
-            Personajes
-          </Link>
+          {localStorage.getItem("token") ? (
+            <Link
+              to="/personajes"
+              className="nav-link active"
+              aria-current="page"
+              style={{
+                color: "gray",
+                fontSize: "20px",
+              }}
+            >
+              <p>Personajes</p>
+            </Link>
+          ) : (
+            <Link
+              to=""
+              className="nav-link active"
+              aria-current="page"
+              style={{
+                color: "gray",
+                fontSize: "20px",
+              }}
+            >
+              <p data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Personajes{" "}
+              </p>
+              <ModalLogin />
+            </Link>
+          )}
           <p
             className="nav-link active"
             style={{
@@ -48,12 +68,8 @@ export const Navbar = () => {
                 aria-expanded="false"
               >
                 <img
-                  src={
-                    store.usuario.info?.imagen
-                      ? store.usuario.info.imagen
-                      : "https://res.cloudinary.com/dz8eyr7mb/image/upload/v1667342806/Animalium/Avatar_k0z1ns.png"
-                  }
-                  alt=""
+                  src="https://res.cloudinary.com/dz8eyr7mb/image/upload/v1667342806/Animalium/Avatar_k0z1ns.png"
+                  alt="imagesession"
                   className="d-flex justify-content-center text-center rounded-circle"
                   style={{
                     width: "50px",

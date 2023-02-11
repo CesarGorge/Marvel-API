@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { ModalLogin } from "./modalLogin";
 export const Hero = () => {
   return (
     <div className="container d-flex hero">
@@ -13,21 +13,42 @@ export const Hero = () => {
           más sobre ellos.
         </h2>
         <div className="btn-explorar mt-4">
-          <Link to="/personajes">
-            <button
-              type="button"
-              className="btn-explorar bg-dark"
-              style={{
-                width: "174px",
-                height: "47px",
-                borderRadius: "29px",
-                border: "none",
-                color: "white",
-              }}
-            >
-              Explorar
-            </button>
-          </Link>
+          {localStorage.getItem("token") ? (
+            <Link to="/personajes">
+              <button
+                type="button"
+                className="btn-explorar bg-dark"
+                style={{
+                  width: "174px",
+                  height: "47px",
+                  borderRadius: "29px",
+                  border: "none",
+                  color: "white",
+                }}
+              >
+                Explorar
+              </button>
+            </Link>
+          ) : (
+            <div>
+              <button
+                type="button"
+                className="btn btn-primary bg-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                style={{
+                  width: "174px",
+                  height: "47px",
+                  borderRadius: "29px",
+                  border: "none",
+                  color: "white",
+                }}
+              >
+                Explorar
+              </button>
+              <ModalLogin />
+            </div>
+          )}
         </div>
       </div>
 
